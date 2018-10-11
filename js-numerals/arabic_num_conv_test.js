@@ -49,7 +49,7 @@ test('Test 19', function(t){
 
 test('Test 20', function(t){
   const actual = arabicNumConverters.convertArabicToText(20);
-  const expected = 'twenty-one';
+  const expected = 'twenty';
   t.equal(actual, expected, 'Test 20 is ok');
   t.end();
 });

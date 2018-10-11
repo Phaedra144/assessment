@@ -22,7 +22,7 @@ function convertArabicToText(inputNumber) {
   } else if (inputNumber >= 10 && inputNumber < 20) {
     result = tens[inputNumber - 10];
   } else {
-    result = decades[inputNumber/10 - 1] + '-'
+    result = decades[inputNumber/10 - 1];
   }
   return result;
 }
