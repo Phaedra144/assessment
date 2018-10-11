@@ -1,0 +1,19 @@
+{
+  "name": "js-numerals",
+  "version": "1.0.0",
+  "description": "Javascript/Frontend Programmer - Exercise 1\r =============================",
+  "main": "arabic_num_conversion.js",
+  "scripts": {
+    "test": "node arabic_num_conv_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phaedra144/assessment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phaedra144/assessment/issues"
+  },
+  "homepage": "https://github.com/Phaedra144/assessment#readme"
+}
