@@ -15,6 +15,13 @@ test('Submit button exists ', function (t) {
 test('Test 1', function(t){
   const actual = arabicNumConverters.convertArabicToText(1);
   const expected = 'one';
-  t.equal(actual, expected, 'Test 1 is not ok');
+  t.equal(actual, expected, 'Test 1 is ok');
+  t.end();
+});
+
+test('Test 2', function(t){
+  const actual = arabicNumConverters.convertArabicToText(2);
+  const expected = 'two';
+  t.equal(actual, expected, 'Test 2 is not ok');
   t.end();
 });
