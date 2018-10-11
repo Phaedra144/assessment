@@ -14,7 +14,9 @@ submitButt.addEventListener('click', convertArabicToText);
 
 function convertArabicToText(inputNumber) {
   if (inputNumber === 2) {
-    return 'two'
+    return 'two';
+  } else if (inputNumber === 3) {
+    return 'three';
   }
   return 'one';
 }
