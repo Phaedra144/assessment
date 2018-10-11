@@ -25,3 +25,10 @@ test('Test 2', function(t){
   t.equal(actual, expected, 'Test 2 is ok');
   t.end();
 });
+
+test('Test 3', function(t){
+  const actual = arabicNumConverters.convertArabicToText(3);
+  const expected = 'three';
+  t.equal(actual, expected, 'Test 3 is not ok');
+  t.end();
+});
