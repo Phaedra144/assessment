@@ -13,8 +13,12 @@ const submitButt = document.querySelector('#submit_button');
 submitButt.addEventListener('click', convertArabicToText);
 
 function convertArabicToText(inputNumber) {
-  const numList = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
-  return numList[inputNumber - 1];
+  const listBelowTen = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+  const listAboveNine = ['ten', 'eleven', 'twelve'];
+  if (inputNumber < 10) {
+    return listBelowTen[inputNumber - 1]
+  }
+  return listAboveNine[inputNumber - 10];
 }
 
 module.exports = {
