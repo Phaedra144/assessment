@@ -39,3 +39,10 @@ test('Test 12', function(t){
   t.equal(actual, expected, 'Test 12 is ok');
   t.end();
 });
+
+test('Test 19', function(t){
+  const actual = arabicNumConverters.convertArabicToText(19);
+  const expected = 'nineteen';
+  t.equal(actual, expected, 'Test 19 is ok');
+  t.end();
+});
