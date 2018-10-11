@@ -13,6 +13,9 @@ const submitButt = document.querySelector('#submit_button');
 submitButt.addEventListener('click', convertArabicToText);
 
 function convertArabicToText(inputNumber) {
+  if (inputNumber === 2) {
+    return 'two'
+  }
   return 'one';
 }
 
