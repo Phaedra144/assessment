@@ -13,7 +13,7 @@ const submitButt = document.querySelector('#submit_button');
 submitButt.addEventListener('click', convertArabicToText);
 
 function convertArabicToText(inputNumber) {
-  const numList = ['one', 'two', 'three'];
+  const numList = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
   return numList[inputNumber - 1];
 }
 
