@@ -15,10 +15,10 @@ submitButt.addEventListener('click', convertArabicToText);
 function convertArabicToText(inputNumber) {
   const listBelowTen = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
   const tens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
-  const decades = ['', 'twenty'];
+  const decades = ['', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
   let result = '';
   const digits = getDigits(inputNumber);
-  
+
   if (getDigits(inputNumber).length > 1) {
     if (inputNumber > 20 && inputNumber % 10 !== 0) {
       result = decades[digits[0] - 1] + '-' + listBelowTen[digits[1] - 1];

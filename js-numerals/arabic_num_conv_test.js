@@ -67,3 +67,17 @@ test('Test 21', function (t) {
   t.equal(actual, expected, 'Test 21 is ok');
   t.end();
 });
+
+test('Test 64', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(64);
+  const expected = 'sixty-four';
+  t.equal(actual, expected, 'Test 64 is ok');
+  t.end();
+});
+
+test('Test 99', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(99);
+  const expected = 'ninety-nine';
+  t.equal(actual, expected, 'Test 99 is ok');
+  t.end();
+});
