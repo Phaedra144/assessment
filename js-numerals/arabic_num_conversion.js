@@ -28,16 +28,18 @@ function convertArabicToText(inputNumber) {
 }
 
 function getDigits(number) {
-  output = [];
+  let output = [];
   while (number) {
     output.push(number % 10);
     number = Math.floor(number / 10);
   }
+  output = output.reverse();
   return output;
 }
 
 module.exports = {
   fieldInputNum,
   submitButt,
-  convertArabicToText
+  convertArabicToText,
+  getDigits
 };

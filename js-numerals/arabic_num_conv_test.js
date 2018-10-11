@@ -53,3 +53,10 @@ test('Test 20', function(t){
   t.equal(actual, expected, 'Test 20 is ok');
   t.end();
 });
+
+test('Get digits 3432', function(t){
+  const actual = arabicNumConverters.getDigits(3432);
+  const expected = [3, 4, 3, 2];
+  t.deepEqual(actual, expected, 'get digits of 3432');
+  t.end();
+});
