@@ -10,7 +10,14 @@ global.document = DOM.window.document;
 const fieldInputNum = document.querySelector('#input_number');
 const submitButt = document.querySelector('#submit_button');
 
+submitButt.addEventListener('click', convertArabicToText);
+
+function convertArabicToText(inputNumber) {
+  return null;
+}
+
 module.exports = {
   fieldInputNum,
-  submitButt
+  submitButt,
+  convertArabicToText
 };

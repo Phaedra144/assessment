@@ -1,15 +1,20 @@
 'use strict';
 const test = require('tape');
-const fieldInputNumber = require('./arabic_num_conversion');
-const submitButt = require('./arabic_num_conversion');
+const arabicNumConverters = require('./arabic_num_conversion');
 
 test('Input field exists ', function (t) {
-  t.notEqual(fieldInputNumber, null, 'should not be null');
+  t.notEqual(arabicNumConverters.fieldInputNumber, null, 'input should not be null');
   t.end();
 });
 
 test('Submit button exists ', function (t) {
-  t.notEqual(submitButt, null, 'should not be null');
+  t.notEqual(arabicNumConverters.submitButt, null, 'button should not be null');
   t.end();
 });
 
+test('Test 1', function(t){
+  const actual = arabicNumConverters.convertArabicToText(1);
+  const expected = 'one';
+  t.equal(actual, expected, 'Test 1 is not ok');
+  t.end();
+});
