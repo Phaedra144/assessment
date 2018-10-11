@@ -47,9 +47,9 @@ test('Test 19', function(t){
   t.end();
 });
 
-test('Test 21', function(t){
-  const actual = arabicNumConverters.convertArabicToText(21);
+test('Test 20', function(t){
+  const actual = arabicNumConverters.convertArabicToText(20);
   const expected = 'twenty-one';
-  t.equal(actual, expected, 'Test 21 is ok');
+  t.equal(actual, expected, 'Test 20 is ok');
   t.end();
 });
