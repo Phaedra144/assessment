@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Phaedra144/assessment/issues"
   },
-  "homepage": "https://github.com/Phaedra144/assessment#readme"
+  "homepage": "https://github.com/Phaedra144/assessment#readme",
+  "dependencies": {
+    "jsdom": "^12.2.0",
+    "tape": "^4.9.1"
+  }
 }
