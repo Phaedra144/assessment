@@ -31,19 +31,23 @@ function convertArabicToText(inputNumber) {
 
   let result = '';
   const digits = getDigits(inputNumber);
-  
-  if (digits.length > 2) {
-    result = listBelowTen[digits[0]] + ' hundred';
-  } else if (digits.length > 1 && digits.length < 3) {
-    if (inputNumber > 20 && inputNumber % 10 !== 0) {
-      result = decades[digits[0]] + '-' + listBelowTen[digits[1]];
-    } else if (inputNumber >= 20 && inputNumber % 10 === 0) {
-      result = decades[inputNumber / 10];
-    } else {
-      result = tens[inputNumber - 10];
-    }
-  } else {
-    result = listBelowTen[inputNumber];
+
+  switch (digits.length) {
+    case 1:
+      result = listBelowTen[inputNumber];
+      break;
+    case 2:
+      if (inputNumber > 20 && inputNumber % 10 !== 0) {
+        result = decades[digits[0]] + '-' + listBelowTen[digits[1]];
+      } else if (inputNumber >= 20 && inputNumber % 10 === 0) {
+        result = decades[inputNumber / 10];
+      } else {
+        result = tens[inputNumber - 10];
+      }
+      break;
+    case 3:
+      result = listBelowTen[digits[0]] + ' hundred';
+      break;
   }
   return result;
 }
