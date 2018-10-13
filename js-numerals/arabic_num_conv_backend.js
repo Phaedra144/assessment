@@ -31,11 +31,10 @@ function convertArabicToText(inputNumber) {
 
   let result = '';
   const digits = getDigits(inputNumber);
+  
   if (digits.length > 2) {
     result = listBelowTen[digits[0]] + ' hundred';
-  }
-
-  if (digits.length > 1 && digits.length < 3) {
+  } else if (digits.length > 1 && digits.length < 3) {
     if (inputNumber > 20 && inputNumber % 10 !== 0) {
       result = decades[digits[0]] + '-' + listBelowTen[digits[1]];
     } else if (inputNumber >= 20 && inputNumber % 10 === 0) {
