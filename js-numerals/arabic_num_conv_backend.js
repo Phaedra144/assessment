@@ -50,23 +50,31 @@ function convertArabicToText(inputNumber) {
 
   let result = '';
   const digits = getDigits(inputNumber);
-  let lastDigits = parseInt(digits.slice(digits.length-2, digits.length).join(''));
-  
+  let lastDigits = parseInt(digits.slice(digits.length - 2, digits.length).join(''));
+
+  if (digits.length > 3) {
+    result = result.concat(oneToNineteen[digits[0]] + ' thousand');
+    if (lastDigits === 0 && digits[digits.length - 3] === 0) {
+      return result;
+    }
+  }
+
   if (digits.length > 2) {
-    result = oneToNineteen[digits[0]] + ' hundred';
+    result = result.concat(oneToNineteen[digits[digits.length - 3]] + ' hundred');
     if (lastDigits > 0) {
       result = result.concat(' and ');
     } else {
       return result;
     }
   }
+
   if (lastDigits >= 20) {
-    result = result.concat(decades[digits[digits.length-2]]);
+    result = result.concat(decades[digits[digits.length - 2]]);
     if (inputNumber % 10 === 0) {
       return result;
     } else {
       result = result.concat('-');
-      lastDigits = digits[digits.length-1];
+      lastDigits = digits[digits.length - 1];
     }
   }
   result = result.concat(oneToNineteen[lastDigits]);
