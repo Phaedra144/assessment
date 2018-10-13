@@ -25,33 +25,51 @@ app.post('/converter', (req, res) => {
 app.listen(3000);
 
 function convertArabicToText(inputNumber) {
-  const listBelowTen = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-  const tens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+  const oneToNineteen = {
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven',
+    8: 'eight',
+    9: 'nine',
+    10: 'ten',
+    11: 'eleven',
+    12: 'twelve',
+    13: 'thirteen',
+    14: 'fourteen',
+    15: 'fifteen',
+    16: 'sixteen',
+    17: 'seventeen',
+    18: 'eighteen',
+    19: 'nineteen'
+  };
   const decades = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
   let result = '';
   const digits = getDigits(inputNumber);
-
-  switch (digits.length) {
-    case 1:
-      result = listBelowTen[inputNumber];
-      break;
-    case 2:
-      if (inputNumber > 20 && inputNumber % 10 !== 0) {
-        result = decades[digits[0]] + '-' + listBelowTen[digits[1]];
-      } else if (inputNumber >= 20 && inputNumber % 10 === 0) {
-        result = decades[inputNumber / 10];
-      } else {
-        result = tens[inputNumber - 10];
-      }
-      break;
-    case 3:
-      result = listBelowTen[digits[0]] + ' hundred';
-      if (digits[2] > 0) {
-        result = result.concat(' and ' + listBelowTen[digits[2]]);
-      }
-      break;
+  let lastDigits = parseInt(digits.slice(digits.length-2, digits.length).join(''));
+  
+  if (digits.length > 2) {
+    result = oneToNineteen[digits[0]] + ' hundred';
+    if (lastDigits > 0) {
+      result = result.concat(' and ');
+    } else {
+      return result;
+    }
   }
+  if (lastDigits >= 20) {
+    result = result.concat(decades[digits[digits.length-2]]);
+    if (inputNumber % 10 === 0) {
+      return result;
+    } else {
+      result = result.concat('-');
+      lastDigits = digits[digits.length-1];
+    }
+  }
+  result = result.concat(oneToNineteen[lastDigits]);
   return result;
 }
 
