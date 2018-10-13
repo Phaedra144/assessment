@@ -94,4 +94,18 @@ test('Test 116', function (t) {
   t.end();
 });
 
+test('Test 999', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(999);
+  const expected = 'nine hundred and ninety-nine';
+  t.equal(actual, expected, 'Test 999 is ok');
+  t.end();
+});
+
+test('Test 999', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(999);
+  const expected = 'nine hundred and ninety-nine';
+  t.equal(actual, expected, 'Test 999 is ok');
+  t.end();
+});
+
 
