@@ -101,10 +101,10 @@ test('Test 999', function (t) {
   t.end();
 });
 
-test('Test 999', function (t) {
-  const actual = arabicNumConverters.convertArabicToText(999);
-  const expected = 'nine hundred and ninety-nine';
-  t.equal(actual, expected, 'Test 999 is ok');
+test('Test 1000', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(1000);
+  const expected = 'one thousand';
+  t.equal(actual, expected, 'Test 1000 is ok');
   t.end();
 });
 
