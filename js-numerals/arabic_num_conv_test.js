@@ -79,3 +79,19 @@ test('Test 100', function (t) {
   t.equal(actual, expected, 'Test 100 is ok');
   t.end();
 });
+
+test('Test 101', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(101);
+  const expected = 'one hundred and one';
+  t.equal(actual, expected, 'Test 101 is ok');
+  t.end();
+});
+
+test('Test 116', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(116);
+  const expected = 'one hundred and sixteen';
+  t.equal(actual, expected, 'Test 116 is ok');
+  t.end();
+});
+
+

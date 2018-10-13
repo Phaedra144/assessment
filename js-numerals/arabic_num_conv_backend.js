@@ -47,6 +47,9 @@ function convertArabicToText(inputNumber) {
       break;
     case 3:
       result = listBelowTen[digits[0]] + ' hundred';
+      if (digits[2] > 0) {
+        result = result.concat(' and ' + listBelowTen[digits[2]]);
+      }
       break;
   }
   return result;
