@@ -47,22 +47,25 @@ function convertArabicToText(inputNumber) {
     19: 'nineteen'
   };
   const decades = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-
+  const centuries = [' thousand', ' hundred']
   let result = '';
   const digits = getDigits(inputNumber);
   let lastDigits = parseInt(digits.slice(digits.length - 2, digits.length).join(''));
 
-  if (digits.length > 3) {
-    result = result.concat(oneToNineteen[digits[0]] + ' thousand');
-    if (lastDigits === 0 && digits[digits.length - 3] === 0) {
-      return result;
-    }
-  }
-
   if (digits.length > 2) {
-    result = result.concat(oneToNineteen[digits[digits.length - 3]] + ' hundred');
+    let centuryIndex = 0;
+    for (let index = 0; index < digits.length - 2; index++) {
+      if (digits.length === 3) {
+        centuryIndex++;
+      }
+      result = result.concat(oneToNineteen[digits[index]] + centuries[centuryIndex]) + ' ';
+      centuryIndex++;
+      if (lastDigits === 0 && digits[digits.length - 3] === 0) {
+        return result;
+      }
+    }
     if (lastDigits > 0) {
-      result = result.concat(' and ');
+      result = result.concat('and ');
     } else {
       return result;
     }

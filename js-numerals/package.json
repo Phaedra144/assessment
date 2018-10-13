@@ -4,7 +4,7 @@
   "description": "Javascript/Frontend Programmer - Exercise 1\r =============================",
   "main": "arabic_num_conversion.js",
   "scripts": {
-    "test": "node arabic_num_conv_test.js"
+    "test": "tape ./test/arabic_num_conv_test.js"
   },
   "repository": {
     "type": "git",
