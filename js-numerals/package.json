@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/Phaedra144/assessment#readme",
   "dependencies": {
-    "fs": "0.0.1-security",
-    "jsdom": "^12.2.0",
+    "express": "^4.16.4",
     "tape": "^4.9.1"
   }
 }

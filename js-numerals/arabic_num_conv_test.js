@@ -1,16 +1,7 @@
 'use strict';
+
 const test = require('tape');
-const arabicNumConverters = require('./arabic_num_conversion');
-
-test('Input field exists ', function (t) {
-  t.notEqual(arabicNumConverters.fieldInputNumber, null, 'input should not be null');
-  t.end();
-});
-
-test('Submit button exists ', function (t) {
-  t.notEqual(arabicNumConverters.submitButt, null, 'button should not be null');
-  t.end();
-});
+const arabicNumConverters = require('./arabic_num_conv_backend');
 
 test('Test 1', function(t){
   const actual = arabicNumConverters.convertArabicToText(1);
@@ -83,7 +74,7 @@ test('Test 99', function (t) {
 });
 
 test('Test 100', function (t) {
-  const actual = arabicNumConverters.convertArabicToText(99);
+  const actual = arabicNumConverters.convertArabicToText(100);
   const expected = 'one hundred';
   t.equal(actual, expected, 'Test 100 is ok');
   t.end();
