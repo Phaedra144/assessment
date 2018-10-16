@@ -1,7 +1,7 @@
 'use strict';
 
 const test = require('tape');
-const arabicNumConverters = require('../arabic_num_conv_backend');
+const arabicNumConverters = require('../arabicnumconvbackend');
 
 test('Test 1', function(t){
   const actual = arabicNumConverters.convertArabicToText(1);

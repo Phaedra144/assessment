@@ -2,9 +2,9 @@
   "name": "js-numerals",
   "version": "1.0.0",
   "description": "Javascript/Frontend Programmer - Exercise 1\r =============================",
-  "main": "arabic_num_conversion.js",
+  "main": "arabicnumconversion.js",
   "scripts": {
-    "test": "tape ./test/arabic_num_conv_test.js"
+    "test": "tape ./test/arabicnumconvtest.js"
   },
   "repository": {
     "type": "git",
