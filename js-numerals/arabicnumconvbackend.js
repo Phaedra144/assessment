@@ -15,7 +15,7 @@ app.get('/ || ""', (req, res) => {
 
 app.post('/converter', (req, res) => {
   const inputnum = req.body.inputnumber;
-  const conversionResult = convertArabicToText(inputnum);
+  const conversionResult = convertNumToText(inputnum);
   res.json({
     result: conversionResult
   })
@@ -24,7 +24,7 @@ app.post('/converter', (req, res) => {
 
 app.listen(3000);
 
-function convertArabicToText(inputNumber) {
+function convertNumToText(inputNumber) {
   const oneToNineteen = {
     0: '',
     1: 'one',
@@ -123,6 +123,6 @@ function checkIfRounded(twoDigits, digits) {
 }
 
 module.exports = {
-  convertArabicToText,
+  convertNumToText,
   getDigits
 };

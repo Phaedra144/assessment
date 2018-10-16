@@ -143,6 +143,13 @@ test('Test 100.000', function (t) {
   t.end();
 });
 
+test('Test 105.404', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(105404);
+  const expected = 'one hundred five thousand four hundred and four';
+  t.equal(actual, expected, 'Test 105.404 is ok');
+  t.end();
+});
+
 test.onFinish(() => process.exit(0));
 
 
