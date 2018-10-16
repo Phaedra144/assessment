@@ -48,11 +48,17 @@ function convertNumToText(inputNumber) {
     19: 'nineteen'
   };
   const decades = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-  const centuries = ['hundred', 'thousand'];
+  const centuries = ['hundred', 'thousand', 'million'];
   let result = [];
   const digits = getDigits(inputNumber);
   let twoDigits = 0;
   const lastDigits = parseInt(digits.slice(digits.length - 2, digits.length).join(''));
+
+  if (digits.length > 6) {
+    result.push(oneToNineteen[digits[0]]);
+    result.push(centuries[2]);
+    digits.shift();
+  }
 
   if (digits.length > 5) {
     result.push(oneToNineteen[digits[0]]);
