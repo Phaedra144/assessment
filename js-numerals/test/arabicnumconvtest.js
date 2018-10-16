@@ -122,24 +122,24 @@ test('Test 1541', function (t) {
   t.end();
 });
 
-test('Test 13648', function (t) {
+test('Test 13.648', function (t) {
   const actual = arabicNumConverters.convertArabicToText(13648);
   const expected = 'thirteen thousand six hundred and fourty-eight';
-  t.equal(actual, expected, 'Test 13648 is ok');
+  t.equal(actual, expected, 'Test 13.648 is ok');
   t.end();
 });
 
-test('Test 17000', function (t) {
+test('Test 17.000', function (t) {
   const actual = arabicNumConverters.convertArabicToText(17000);
   const expected = 'seventeen thousand';
-  t.equal(actual, expected, 'Test 17000 is ok');
+  t.equal(actual, expected, 'Test 17.000 is ok');
   t.end();
 });
 
-test('Test 100000', function (t) {
+test('Test 100.000', function (t) {
   const actual = arabicNumConverters.convertArabicToText(100000);
   const expected = 'one hundred thousand';
-  t.equal(actual, expected, 'Test 100000 is ok');
+  t.equal(actual, expected, 'Test 100.000 is ok');
   t.end();
 });
 

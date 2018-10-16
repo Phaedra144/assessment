@@ -54,16 +54,23 @@ function convertArabicToText(inputNumber) {
   let twoDigits = 0;
   const lastDigits = parseInt(digits.slice(digits.length - 2, digits.length).join(''));
 
+  if (digits.length > 5) {
+    result.push(oneToNineteen[digits[0]]);
+    result.push(centuries[0]);
+    digits.shift();
+  }
+
   if (digits.length > 3) {
     twoDigits = parseInt(digits.slice(0, digits.length - 3).join(''));
     result.push(getTwoDigits(oneToNineteen, decades, digits, twoDigits, inputNumber));
     result.push(centuries[1]);
+    result = result.filter(x => x !== '');
   }
 
   twoDigits = lastDigits;
 
   if (digits.length > 2) {
-    if (twoDigits === 0 && digits[digits.length - 3] === 0) {
+    if (checkIfRounded(twoDigits, digits)) {
       return result.join(' ');
     }
     result.push(oneToNineteen[digits[digits.length - 3]]);
@@ -111,9 +118,8 @@ function getTens(decades, digits, inputNumber) {
   return tens;
 }
 
-function removeLastChar(str) {
-  str = str.slice(0, -1);
-  return str;
+function checkIfRounded(twoDigits, digits) {
+  return twoDigits === 0 && digits[digits.length - 3] === 0;
 }
 
 module.exports = {
