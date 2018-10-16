@@ -129,6 +129,20 @@ test('Test 13648', function (t) {
   t.end();
 });
 
+test('Test 17000', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(17000);
+  const expected = 'seventeen thousand';
+  t.equal(actual, expected, 'Test 17000 is ok');
+  t.end();
+});
+
+test('Test 100000', function (t) {
+  const actual = arabicNumConverters.convertArabicToText(100000);
+  const expected = 'one hundred thousand';
+  t.equal(actual, expected, 'Test 100000 is ok');
+  t.end();
+});
+
 test.onFinish(() => process.exit(0));
 
 
