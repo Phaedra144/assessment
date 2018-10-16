@@ -47,6 +47,7 @@ function convertNumToText(inputNumber) {
     18: 'eighteen',
     19: 'nineteen'
   };
+  
   const decades = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
   const centuries = ['hundred', 'thousand', 'million'];
   let result = [];
