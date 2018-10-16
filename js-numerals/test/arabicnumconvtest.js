@@ -75,7 +75,7 @@ test('Test 99', function (t) {
 
 test('Test 100', function (t) {
   const actual = arabicNumConverters.convertArabicToText(100);
-  const expected = 'one hundred ';
+  const expected = 'one hundred';
   t.equal(actual, expected, 'Test 100 is ok');
   t.end();
 });
@@ -103,14 +103,14 @@ test('Test 999', function (t) {
 
 test('Test 1000', function (t) {
   const actual = arabicNumConverters.convertArabicToText(1000);
-  const expected = 'one thousand ';
+  const expected = 'one thousand';
   t.equal(actual, expected, 'Test 1000 is ok');
   t.end();
 });
 
 test('Test 1500', function (t) {
   const actual = arabicNumConverters.convertArabicToText(1500);
-  const expected = 'one thousand five hundred ';
+  const expected = 'one thousand five hundred';
   t.equal(actual, expected, 'Test 1500 is ok');
   t.end();
 });
@@ -125,7 +125,7 @@ test('Test 1541', function (t) {
 test('Test 13648', function (t) {
   const actual = arabicNumConverters.convertArabicToText(13648);
   const expected = 'thirteen thousand six hundred and fourty-eight';
-  t.equal(actual, expected, 'Test 1541 is ok');
+  t.equal(actual, expected, 'Test 13648 is ok');
   t.end();
 });
 

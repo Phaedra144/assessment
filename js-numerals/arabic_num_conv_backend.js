@@ -60,27 +60,23 @@ function convertArabicToText(inputNumber) {
       }
       result = result.concat(oneToNineteen[digits[index]] + centuries[centuryIndex]) + ' ';
       centuryIndex++;
+      
       if (lastDigits === 0 && digits[digits.length - 3] === 0) {
-        return result;
+        return removeLastChar(result);
       }
     }
+
     if (lastDigits > 0) {
       result = result.concat('and ');
     } else {
-      return result;
+      return removeLastChar(result);
     }
   }
 
   if (lastDigits >= 20) {
-    result = result.concat(decades[digits[digits.length - 2]]);
-    if (inputNumber % 10 === 0) {
-      return result;
-    } else {
-      result = result.concat('-');
-      lastDigits = digits[digits.length - 1];
-    }
+    concatTens();
   }
-  result = result.concat(oneToNineteen[lastDigits]);
+  concatOnes(oneToNineteen, lastDigits, result);
   return result;
 }
 
@@ -92,6 +88,27 @@ function getDigits(number) {
   }
   output.reverse();
   return output;
+}
+
+function concatTens(oneToNineteen, lastDigits) {
+  result = result.concat(decades[digits[digits.length - 2]]);
+  if (inputNumber % 10 === 0) {
+    return result;
+  } else {
+    result = result.concat('-');
+    lastDigits = digits[digits.length - 1];
+  }
+  return result;
+}
+
+function concatOnes(oneToNineteen, lastDigits, result) {
+  result = result.concat(oneToNineteen[lastDigits]);
+  return result;
+}
+
+function removeLastChar(str) {
+  str = str.slice(0, -1);
+  return str;
 }
 
 module.exports = {
